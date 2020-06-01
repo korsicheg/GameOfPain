@@ -98,6 +98,14 @@
             <Insets left="100.0" top="-25.0" />
          </VBox.margin>
       </TextField>
+      <Text fontSmoothingType="LCD" layoutX="255.0" layoutY="275.0" strokeType="OUTSIDE" strokeWidth="0.0" text="*between 3x3 and 20x20*">
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
+         <font>
+            <Font size="10.0" />
+         </font>
+      </Text>
       <Text layoutX="33.0" layoutY="124.0" strokeType="OUTSIDE" strokeWidth="0.0" text="SELECT DIFFICULTY">
          <font>
             <Font size="24.0" />
