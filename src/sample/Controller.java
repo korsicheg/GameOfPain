@@ -1,5 +1,7 @@
 package sample;
 
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -209,6 +211,15 @@ public class Controller extends Main implements Initializable {
                         }
                     }
             );
+
+            columns.textProperty().addListener(new ChangeListener<String>() {
+                @Override
+                public void changed(ObservableValue<? extends String> observable,
+                                    String oldValue, String newValue) {
+
+                    rows.setText(columns.getText());
+                }
+            });
 
         }
         //--------------------------------------------------------------------------------------------------------------
