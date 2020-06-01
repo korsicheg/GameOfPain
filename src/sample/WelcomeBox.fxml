@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox alignment="TOP_CENTER" prefHeight="600.0" prefWidth="500.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <children>
+      <TextField fx:id="player1Name" maxWidth="200.0">
+         <VBox.margin>
+            <Insets left="250.0" top="10.0" />
+         </VBox.margin>
+      </TextField>
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Enter your name, Player 1">
+         <font>
+            <Font size="18.0" />
+         </font>
+         <VBox.margin>
+            <Insets right="250.0" top="-25.0" />
+         </VBox.margin>
+      </Text>
+      <TextField fx:id="player2Name" layoutX="285.0" layoutY="20.0" maxWidth="200.0">
+         <VBox.margin>
+            <Insets left="250.0" top="15.0" />
+         </VBox.margin>
+      </TextField>
+      <Text layoutX="34.0" layoutY="39.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter your name, Player 2">
+         <font>
+            <Font size="18.0" />
+         </font>
+         <VBox.margin>
+            <Insets right="250.0" top="-25.0" />
+         </VBox.margin>
+      </Text>
+      <Text layoutX="34.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Select color of your car, Player 1">
+         <font>
+            <Font size="18.0" />
+         </font>
+         <VBox.margin>
+            <Insets right="200.0" top="15.0" />
+         </VBox.margin>
+      </Text>
+      <ComboBox fx:id="carColor" prefWidth="150.0">
+         <VBox.margin>
+            <Insets left="250.0" top="-25.0" />
+         </VBox.margin></ComboBox>
+      <ImageView fx:id="carPlayer1" fitHeight="40.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true">
+         <VBox.margin>
+            <Insets right="150.0" top="15.0" />
+         </VBox.margin>
+      </ImageView>
+      <ImageView fx:id="carPlayer2" fitHeight="40.0" fitWidth="80.0" layoutX="220.0" layoutY="131.0" pickOnBounds="true" preserveRatio="true">
+         <VBox.margin>
+            <Insets left="150.0" top="-40.0" />
+         </VBox.margin>
+      </ImageView>
+      <Label fx:id="colorPlayer1" text="PLAYER 1">
+         <font>
+            <Font size="24.0" />
+         </font>
+         <VBox.margin>
+            <Insets right="150.0" />
+         </VBox.margin>
+      </Label>
+      <Label fx:id="colorPlayer2" layoutX="135.0" layoutY="186.0" text="PLAYER 2">
+         <font>
+            <Font size="24.0" />
+         </font>
+         <VBox.margin>
+            <Insets left="150.0" top="-35.0" />
+         </VBox.margin>
+      </Label>
+      <Text layoutX="34.0" layoutY="82.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Game dimentions:">
+         <font>
+            <Font size="18.0" />
+         </font>
+         <VBox.margin>
+            <Insets top="20.0" />
+         </VBox.margin>
+      </Text>
+      <Text layoutX="188.0" layoutY="261.0" strokeType="OUTSIDE" strokeWidth="0.0" text="X">
+         <font>
+            <Font size="18.0" />
+         </font>
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
+      </Text>
+      <TextField fx:id="columns" alignment="CENTER" layoutX="285.0" layoutY="20.0" maxWidth="75.0" promptText="Columns">
+         <VBox.margin>
+            <Insets right="100.0" top="-25.0" />
+         </VBox.margin>
+      </TextField>
+      <TextField fx:id="rows" alignment="CENTER" layoutX="285.0" layoutY="62.0" maxWidth="75.0" promptText="Rows">
+         <VBox.margin>
+            <Insets left="100.0" top="-25.0" />
+         </VBox.margin>
+      </TextField>
+      <Text layoutX="33.0" layoutY="124.0" strokeType="OUTSIDE" strokeWidth="0.0" text="SELECT DIFFICULTY">
+         <font>
+            <Font size="24.0" />
+         </font>
+         <VBox.margin>
+            <Insets top="25.0" />
+         </VBox.margin>
+      </Text>
+      <ComboBox fx:id="difficulty" layoutX="310.0" layoutY="106.0" prefWidth="150.0" />
+      <ImageView fx:id="difficultyImage" fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
+         <VBox.margin>
+            <Insets top="5.0" />
+         </VBox.margin>
+      </ImageView>
+      <Button fx:id="playButton" mnemonicParsing="false" onAction="#play" text="PLAY THE GAME">
+         <font>
+            <Font size="36.0" />
+         </font>
+         <VBox.margin>
+            <Insets top="30.0" />
+         </VBox.margin>
+      </Button>
+   </children>
+</VBox>
