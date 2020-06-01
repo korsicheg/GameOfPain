@@ -107,9 +107,9 @@ public class Controller extends Main implements Initializable {
         game.getChildren().add(blueCar);
         game.getChildren().add(redCar);
         GridPane.setColumnIndex(redCar, 0);
-        GridPane.setRowIndex(redCar, Integer.parseInt(rows.getText())-1);
+        GridPane.setRowIndex(redCar, amountOfRows);
         GridPane.setColumnIndex(blueCar, 0);
-        GridPane.setRowIndex(blueCar, Integer.parseInt(rows.getText())-1);
+        GridPane.setRowIndex(blueCar, amountOfRows);
         GridPane.setValignment(blueCar, VPos.TOP);
         GridPane.setValignment(redCar,VPos.BOTTOM);
         mainBody.setStyle("-fx-background-color: white");
