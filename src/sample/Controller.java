@@ -44,8 +44,6 @@ public class Controller extends Main implements Initializable {
     private TextField player2Name;
     @FXML
     private Button playButton;
-    @FXML
-    public ImageView diceImage;
 
     //------------------------------------------------------------------------------------------------------------------
 
@@ -56,7 +54,6 @@ public class Controller extends Main implements Initializable {
     protected static Image blueCarLImage = new Image("/images/BlueCarL.png");
     protected static Image redCarImage = new Image("/images/RedCar.png");
     protected static Image blueCarImage = new Image("/images/BlueCar.png");
-    protected static Image blueCarImage1 = new Image("/images/imageDice1.jpg");
     protected static int amountOfColumns;
     protected static int amountOfRows;
     protected static int startingPosition;
@@ -71,10 +68,6 @@ public class Controller extends Main implements Initializable {
         player2.setName(player2Name.getText());
         player1.setFuel(120);
         player2.setFuel(120);
-        player1.setCurrentColumn(0);
-        player1.setCurrentRow(Integer.parseInt(rows.getText())-1);
-        player2.setCurrentColumn(0);
-        player2.setCurrentRow(Integer.parseInt(rows.getText())-1);
         player1.setBlock(0);
         player2.setBlock(0);
         player1.setPriority(3);
@@ -82,6 +75,12 @@ public class Controller extends Main implements Initializable {
         startingPosition = Integer.parseInt(rows.getText())-1;
         amountOfColumns = Integer.parseInt(columns.getText())-1;
         amountOfRows = Integer.parseInt(rows.getText())-1;
+        player1.setCurrentColumn(0);
+        player1.setCurrentRow(amountOfRows);
+        player2.setCurrentColumn(0);
+        player2.setCurrentRow(amountOfRows);
+        System.out.println("player1 position: "+player1.getCurrentColumn()+player1.getCurrentRow());
+        System.out.println("player2 position: "+player2.getCurrentColumn()+player2.getCurrentRow());
         fuel.setFuelArray(new int[amountOfRows + 1][amountOfColumns + 1]);
         fuel.initializeFuelCost();
         fuel.setDifficulty(difficulty.getValue());

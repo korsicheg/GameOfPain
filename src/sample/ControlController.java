@@ -41,7 +41,6 @@ public class ControlController extends Controller implements Initializable {
 
     // Variable initialization
     protected static Image diceOneImage = new Image("images/imageDice1.jpg");
-    protected boolean winner;
 
     //------------------------------------------------------------------------------------------------------------------
 
@@ -49,7 +48,6 @@ public class ControlController extends Controller implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         diceImage.setImage(diceOneImage);
         whoGoesFirst.whoGoes(player1, player2, whoRolled);
-        winner = false;
         rollButton.setOnMouseClicked(event -> roll());
         player1Control.setText(player1.getName());
 
@@ -135,7 +133,7 @@ public class ControlController extends Controller implements Initializable {
         } else {
             if (player1.getPriority() == 1) {
                 if (player1.getFuel() < 0 && player1.getBlock() == 0) {
-                    fuel.outOfFuel(player1);
+                    fuel.outOfFuel(player1, fuel1);
                     fuel1.setText("Fuel meter: " + (int) player1.getFuel());
                     fuelBar1.setProgress(player1.getFuel() / 120);
                 } else if (player1.getBlock() > 0) {
@@ -146,11 +144,11 @@ public class ControlController extends Controller implements Initializable {
                         whoRolled.setStyle("-fx-text-fill: red;");
                     }
                     player1.setPriority(2);
-                    fuel.outOfFuel(player1);
+                    fuel.outOfFuel(player1, fuel1);
                     fuel1.setText("Fuel meter: " + (int) player1.getFuel());
                     fuelBar1.setProgress(player1.getFuel() / 120);
                 } else {
-                    movement.playerMoves(player1, whoRolled,diceImage);
+                    movement.playerMoves(player1, whoRolled, diceImage);
                     movement.moveCar(player1);
                     fuel.checkForField(player1, fuel.getFuelArray());
                     //Turning the car left and right depending on the destination
@@ -161,7 +159,7 @@ public class ControlController extends Controller implements Initializable {
                 }
             } else {
                 if (player2.getFuel() < 0 && player2.getBlock() == 0) {
-                    fuel.outOfFuel(player2);
+                    fuel.outOfFuel(player2, fuel2);
                     fuel2.setText("Fuel meter: " + (int) player2.getFuel());
                     fuelBar2.setProgress(player2.getFuel() / 120);
                 } else if (player2.getBlock() > 0) {
@@ -172,11 +170,11 @@ public class ControlController extends Controller implements Initializable {
                         whoRolled.setStyle("-fx-text-fill: red;");
                     }
                     player1.setPriority(1);
-                    fuel.outOfFuel(player2);
+                    fuel.outOfFuel(player2, fuel2);
                     fuel2.setText("Fuel meter: " + (int) player2.getFuel());
                     fuelBar2.setProgress(player2.getFuel() / 120);
                 } else {
-                    movement.playerMoves(player2, whoRolled,diceImage);
+                    movement.playerMoves(player2, whoRolled, diceImage);
                     movement.moveCar(player2);
                     fuel.checkForField(player2, fuel.getFuelArray());
 

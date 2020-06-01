@@ -52,7 +52,6 @@ public class Movement extends ControlController {
         }
         int rest = die.getDie();
         if (winCheck(player, rest)){
-            winner = true;
             player.setCurrentColumn(0);
             player.setCurrentRow(0);
             player.setPriority(0);
@@ -160,11 +159,11 @@ public class Movement extends ControlController {
 
     //This method moves the car objects within the Pane
     public void moveCar(Player player) {
-        if(winner&&player.getColor().equals("blue")){
+        if(player.getPriority()==0&&player.getColor().equals("blue")){
             GridPane.setColumnIndex(blueCar, 0);
             GridPane.setRowIndex(blueCar, 0);
         }
-        else if(winner&&player.getColor().equals("red")){
+        else if(player.getPriority()==0&&player.getColor().equals("red")){
             GridPane.setColumnIndex(redCar, 0);
             GridPane.setRowIndex(redCar, 0);
         }

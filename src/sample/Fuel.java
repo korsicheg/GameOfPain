@@ -186,7 +186,7 @@ public class Fuel extends Movement {
     }
 
 
-    public void outOfFuel (Player player) {
+    public void outOfFuel (Player player, Label fuelPlayer) {
         toStartClicked=0;
         if (stageAlert.isShowing()) {
             stageAlert.toFront();
@@ -222,6 +222,7 @@ public class Fuel extends Movement {
                     movement.moveCar(player);
                     carGoBrrr(player);
                     toStartClicked=1;
+                    fuelPlayer.setText("Fuel meter: " + (int) player.getFuel());
                     player.setPriority(2);
                     stageAlert.close();
                 }
