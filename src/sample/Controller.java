@@ -130,6 +130,9 @@ public class Controller extends Main implements Initializable {
         stage.setTitle("Game!");
         stage.setScene(sc);
         stage.show();
+        if (stage.isShowing()) {
+            stage.toFront();
+        }
     }
 
     //------------------------------------------------------------------------------------------------------------------
